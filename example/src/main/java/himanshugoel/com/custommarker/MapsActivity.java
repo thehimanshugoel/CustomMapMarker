@@ -11,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -47,21 +48,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions markerOptions = new MarkerOptions();
 
         //Call CustomMarker class and call drawMarker method and in method parameter pass marker layout and interface MarkerView
-        markerOptions.icon(CustomMarker.drawMarker(R.layout.marker_view, new MarkerView() {
+        markerOptions.icon(BitmapDescriptorFactory.fromBitmap(CustomMarker.drawMarker(R.layout.marker_view, new MarkerView() {
             @Override
             public void getMarkerView(View view) {
                 ImageView imgStar = (ImageView) view.findViewById(R.id.imgMarker);
                 TextView txtMarkerText = (TextView) view.findViewById(R.id.txtMarkerText);
                 txtMarkerText.setText("Sydney");
-
             }
 
             @Override
             public Context getContext() {
-                return MapsActivity.this;
+                return getApplicationContext();
             }
-        }));
-
+        })));
         markerOptions.position(sydney);
         mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));

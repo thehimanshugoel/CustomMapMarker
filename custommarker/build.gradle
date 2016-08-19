@@ -1,5 +1,30 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'CustomMarker'
+
+    publishedGroupId = 'com.himanshugoel.custommarker'
+    libraryName = 'CustomMarker'
+    artifact = 'custommarker'
+
+    libraryDescription = 'Customize Google Maps Marker of your own choice by passing the marker layout'
+
+    siteUrl = 'https://github.com/thehimanshugoel/CustomMapMarker'
+    gitUrl = 'https://github.com/thehimanshugoel/CustomMapMarker.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'thehimanshugoel'
+    developerName = 'Himanshu Goel'
+    developerEmail = 'thehimanshugoel@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
 android {
     compileSdkVersion 24
     buildToolsVersion "23.0.3"
@@ -21,5 +46,10 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.1'
+
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+
