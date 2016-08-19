@@ -7,7 +7,7 @@ Customize Google Maps Marker of your own choice by passing the marker layout
 ##Download
 Grab via gradle:
 
-```compile 'compile 'com.himanshugoel.custommarker:custommarker:0.1.0''```
+```'compile 'com.himanshugoel.custommarker:custommarker:0.1.0'```
 
 or Maven:
 ```<dependency>
@@ -19,27 +19,27 @@ or Maven:
  ```
 
 
-##How To Use
+## How To Use
 Call CustomMarker class method drawMarker and pass layout of the custom marker layout and inteface MarkerView()
 
-```MarkerOptions markerOptions = new MarkerOptions();
+```
+MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(CustomMarker.drawMarker(R.layout.marker_view, new MarkerView() {
             @Override
             public void getMarkerView(View view) {
-              
             }
-
             @Override
             public Context getContext() {
                 return getApplicationContext();
             }
-        })));```
-			
-
+        })));
+        
+```
+        
 #Example
-
-```public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
+        
+```
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
 
     @Override
@@ -80,7 +80,9 @@ Call CustomMarker class method drawMarker and pass layout of the custom marker l
         mMap.moveCamera(CameraUpdateFactory.newLatLng(gip));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(16));
     }
-}```
+}
+
+```
 
 
 
