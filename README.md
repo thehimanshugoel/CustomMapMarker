@@ -22,8 +22,7 @@ or Maven:
 ##How To Use
 Call CustomMarker class method drawMarker and pass layout of the custom marker layout and inteface MarkerView()
 
-```
-		MarkerOptions markerOptions = new MarkerOptions();
+```MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(CustomMarker.drawMarker(R.layout.marker_view, new MarkerView() {
             @Override
             public void getMarkerView(View view) {
@@ -34,17 +33,12 @@ Call CustomMarker class method drawMarker and pass layout of the custom marker l
             public Context getContext() {
                 return getApplicationContext();
             }
-        })));
-		```
-			
-
-			
+        })));```
 			
 
 #Example
 
-```
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+```public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -86,8 +80,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(gip));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(16));
     }
-}
-```
+}```
 
 
 
