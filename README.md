@@ -21,7 +21,8 @@ or Maven:
 
 ##How To Use
 Call CustomMarker class method drawMarker and pass layout of the custom marker layout and inteface MarkerView()
-``` LatLng gip = new LatLng(28.56795808189261, 77.32470631599426);
+
+```LatLng gip = new LatLng(28.56795808189261, 77.32470631599426);
         MarkerOptions markerOptions = new MarkerOptions();
 
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(CustomMarker.drawMarker(R.layout.marker_view, new MarkerView() {
